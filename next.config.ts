@@ -9,6 +9,18 @@ const nextConfig: NextConfig = {
     });
     return config;
   },
+    turbopack: {
+    resolveAlias: {
+      underscore: "lodash",
+    },
+    resolveExtensions: [".mdx", ".tsx", ".ts", ".jsx", ".js", ".json"],
+    rules: {
+      "*.svg": {
+        loaders: ["@svgr/webpack"],
+        as: "*.js",
+      },
+    },
+  },
 };
 
 export default nextConfig;
